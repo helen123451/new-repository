@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<title>
+
+AngularJs Simple Calculator Example
+
+</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+<script>
+
+var app = angular.module('CalculatorApp', []);
+app.controller('calculatorctrl', con);
+
+function con($scope)
+{
+	$scope.display="0";
+	$scope.math=function(val)
+	{
+		$scope.display+=val;
+	};
+	$scope.c=function(val)
+	{
+		$scope.display=val;
+	};
+	$scope.e=function()
+	{
+		$scope.display=eval($scope.display);
+	};
+}
+
+</script>
+
+</head>
+
+<body ng-app="CalculatorApp">
+
+<div ng-controller="calculatorctrl">
+
+<div class="display"><input type="text" value="{{display}}" size="15"></div>
+
+<p>
+<input type="button" class="button" value="7" ng-click='math("7")'>
+<input type="button" class="button" value="8" ng-click='math("8")'>
+<input type="button" class="button" value="9" ng-click='math("9")'>
+<input type="button" class="button" value="*" ng-click='math("x")'>
+</p>
+
+<p>
+<input type="button" class="button" value="4" ng-click='math("4")'>
+<input type="button" class="button" value="5" ng-click='math("5")'>
+<input type="button" class="button" value="6" ng-click='math("6")'>
+<input type="button" class="button" value="-" ng-click='math("-")'>
+</p>
+
+<p>
+<input type="button" class="button" value="1" ng-click='math("1")'>
+<input type="button" class="button" value="2" ng-click='math("2")'>
+<input type="button" class="button" value="3" ng-click='math("3")'>
+<input type="button" class="button" value="+" ng-click='math("+")'>
+</p>
+
+<p>
+<input type="button" class="button" value="0" ng-click='math("0")'>
+<input type="button" class="button" value="." ng-click='math(".")'>
+<input type="button" class="button" value="C" ng-click='math("C")'>
+<input type="button" class="button" value="=" ng-click='math("=")'>
+<input type="button" class="button" value="/" ng-click='math("/")'>
+</p>
+</div>
+</div>
+
+</body>
+</html>
