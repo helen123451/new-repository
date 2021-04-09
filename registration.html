@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+<script type="text/javascript">
+
+var app = angular.module('formApp', []);
+
+app.controller('formCtrl', function ($scope) {
+
+$scope.sendForm = function () {
+
+$scope.msg = "Successfully inserted";
+
+};
+
+});
+
+</script>
+
+</head>
+<a href="home.html">Home</a>|
+<a href="registration.html">Registration</a>
+<body>
+
+
+
+
+<div ng-app="formApp" ng-controller="formCtrl">
+
+
+
+<form name="personForm" ng-submit="sendForm()">
+
+First semester mark:<input type="number" name="fmark" ng-model="person.fmark" required />
+
+<span ng-show="personForm.fmark.$error.required"> Required! </span> <br /><br />
+
+Second semester mark:<input type="number" name="smark" ng-model="person.smark" required />
+
+<span ng-show="personForm.smark.$error.required"> Required! </span> <br /><br />
+
+Third semester mark:<input type="number" name="tmark" ng-model="person.tmark" required />
+
+<span ng-show="personForm.tmark.$error.required"> Required! </span> <br /><br />
+
+Forth semester mark:<input type="number" name="fomark" ng-model="person.fomark" required />
+
+<span ng-show="personForm.fomark.$error.required"> Required! </span> <br /><br />
+
+Aggregate Marks:<input type="text" name="amark" ng-model="person.amark" required />
+
+<span ng-show="personForm.amark.$error.required"> Required! </span> <br /><br />
+
+<p>Languages Known:</p>
+<input type="checkbox" ng-model="all"> C<br>
+<input type="checkbox" ng-checked="all">C++<br>
+<input type="checkbox" ng-checked="all">CSharp<br>
+<input type="checkbox" ng-checked="all">Java<br>
+<input type="checkbox" ng-checked="all">SQL<br>
+<input type="checkbox" ng-checked="all">COBOL<br>
+<input type="checkbox" ng-checked="all">Android<br>
+<input type="checkbox" ng-checked="all">Php<br>
+<input type="checkbox" ng-checked="all">Python<br>
+
+<p>Extra-Curricular Activities:</p>
+<input type="checkbox" ng-model="all"> Painting<br>
+<input type="checkbox" ng-checked="all">Singing<br>
+<input type="checkbox" ng-checked="all">Dancing<br>
+<input type="checkbox" ng-checked="all">Cooking<br>
+<input type="checkbox" ng-checked="all">Monoact<br>
+<input type="checkbox" ng-checked="all">Stand-Up comedy<br>
+<input type="checkbox" ng-checked="all">FootBall<br>
+<input type="checkbox" ng-checked="all">Cricket<br>
+<input type="checkbox" ng-checked="all">Golf<br>
+
+<button type="submit">Submit</button><br /><br />
+
+<span>{{msg}}</span>
+
+</form>
+
+</div>
+
+</body>
+
+</html>

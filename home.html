@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+<script type="text/javascript">
+
+var app = angular.module('formApp', []);
+
+app.controller('formCtrl', function ($scope) {
+
+$scope.sendForm = function () {
+
+$scope.msg = "Successfully inserted";
+
+};
+
+});
+
+</script>
+
+</head>
+<a href="home.html">Home</a>|
+<a href="registration.html">Registration</a>
+
+<body>
+
+
+
+<div ng-app="formApp" ng-controller="formCtrl">
+
+<form name="personForm" ng-submit="sendForm()">
+
+ 
+Name:<input type="text" name="name" ng-model="person.name" required />
+
+<span ng-show="personForm.name.$error.required"> Required! </span> <br /><br />
+
+Roll No:<input type="number" name="num" ng-model="person.num" required />
+
+<span ng-show="personForm.num.$error.required"> Required! </span> <br /><br />
+
+Email:<input type="text" name="email" ng-model="person.email" required />
+
+<span ng-show="personForm.email.$error.required"> Required! </span> <br /><br />
+
+<button type="submit">Submit Form</button><br /><br />
+
+<span>{{msg}}</span>
+
+</form>
+
+</div>
+</div>
+
+</body>
+
+</html>
